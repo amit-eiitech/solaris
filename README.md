@@ -1,58 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Solaris
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Solaris is a Laravel starter kit for the content-management backend of a business website. It gives you a Filament admin panel, data models, and database migrations for common business content so you can focus on building the public website around it.
 
-## About Laravel
+## What’s included
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **News** — articles with excerpts, publishing status, dates, and categories.
+- **Events** — event details, location, dates, registration links, and categories.
+- **Blog posts** — article content, author, featured image, publishing status, and categories.
+- **Recruitment** — job listings with department, employment type, location, salary, requirements, and application details.
+- **FAQs** — questions and answers with categories, publishing visibility, and display order.
+- **Categories** — reusable content categories for news, events, and blog posts.
+- **Filament admin panel** — manage content at `/admin`.
+- **Sample data** — optional seeders for previewing the admin resources.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+> **Scope:** Solaris provides the content-management backend, not a finished public-facing website. The root route currently displays Laravel’s welcome page; public pages, APIs, and frontend designs still need to be built and connected to the content models.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requirements
 
-## Learning Laravel
+- PHP 8.3 or later
+- Composer
+- Node.js and npm
+- SQLite by default, or another database supported by Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Getting started
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+After cloning the repository, run these commands from the project directory:
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+```sh
+# Create the SQLite database file if it does not exist.
+php -r "file_exists('database/database.sqlite') || touch('database/database.sqlite');"
 
-## Agentic Development
+# Install PHP and frontend dependencies, prepare .env, generate the app key,
+# run migrations, and build frontend assets.
+composer run setup
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+# Start the local application and development processes.
+composer run dev
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Open the application at `http://localhost:8000` and visit `/admin` to sign in. The default database connection is SQLite. To use another database, update the `DB_*` values in `.env` before running setup.
 
-## Contributing
+### Optional sample content
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Populate the database with example news, events, blog posts, FAQs, job posts, categories, and a local administrator:
 
-## Code of Conduct
+```sh
+php artisan db:seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+The local demo account created by the seeder is:
 
-## Security Vulnerabilities
+- **Email:** `admin@eii.com`
+- **Password:** `solaris`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+These are development credentials only. Change or remove them before deploying, and do not seed this account into a production database.
 
-## License
+## Development
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run the automated test suite with:
+
+```sh
+php artisan test
+```
+
+Useful commands:
+
+```sh
+php artisan migrate       # Apply database migrations
+php artisan db:seed       # Add or refresh example content
+php artisan route:list    # Inspect registered routes
+npm run build             # Build frontend assets
+```
+
+## Project layout
+
+```text
+app/
+  Enums/                   Content and workflow statuses
+  Filament/Resources/      Admin resources and their forms, tables, and views
+  Models/                  Eloquent models for managed content
+database/
+  migrations/              Content and application schema
+  seeders/                 Optional administrator and example content
+resources/                 Frontend assets and Blade views
+routes/                    Application routes
+```
+
+The admin panel discovers resources under `app/Filament/Resources`. Add public routes, controllers, views, or API endpoints as needed for your website.
+
+## Built with
+
+- Laravel 13
+- Filament 5
+- PHP 8.3+
+- Vite and Tailwind CSS
