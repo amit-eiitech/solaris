@@ -6,6 +6,7 @@ use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
+use Filament\Support\Enums\FontWeight;
 
 class BlogPostInfolist
 {
@@ -13,41 +14,52 @@ class BlogPostInfolist
     {
         return $schema
             ->components([
-                Section::make('Post overview')
+                Section::make('Post content')
                     ->icon('heroicon-o-document-text')
-                    ->columns(2)
+                    ->columns(3)
+                    ->columnSpanFull()
                     ->schema([
                         TextEntry::make('title')
-                            ->columnSpanFull(),
-                        TextEntry::make('slug')
-                            ->copyable(),
+                            ->columnSpanFull()
+                            ->weight(FontWeight::Bold)
+                            ->extraAttributes(['style' => 'font-size: 32px; line-height: 1.2;']),
+
                         TextEntry::make('author_name')
-                            ->placeholder('-'),
+                            ->placeholder('-')
+                            ->color('primary'),
+
                         TextEntry::make('status')
                             ->badge(),
-                    ]),
-                Section::make('Content')
-                    ->icon('heroicon-o-pencil-square')
-                    ->schema([
+
+                        ImageEntry::make('featured_image')
+                            ->hiddenLabel()
+                            ->alt('Blog post featured image')
+                            ->columnSpanFull()
+                            ->placeholder('No image'),
+
                         TextEntry::make('excerpt')
                             ->placeholder('-')
                             ->columnSpanFull(),
+
                         TextEntry::make('content')
                             ->html()
                             ->placeholder('-')
                             ->columnSpanFull(),
                     ]),
-                Section::make('Publishing & media')
-                    ->icon('heroicon-o-photo')
+
+                Section::make('Publishing')
+                    ->icon('heroicon-o-arrow-up-tray')
                     ->columns(2)
                     ->schema([
+                        TextEntry::make('slug')
+                            ->copyable(),
+
                         TextEntry::make('published_at')
                             ->dateTime()
                             ->placeholder('-'),
-                        ImageEntry::make('featured_image')
-                            ->alt('Blog post featured image')
-                            ->placeholder('-'),
+
                     ]),
+
                 Section::make('Record history')
                     ->icon('heroicon-o-clock')
                     ->columns(2)
