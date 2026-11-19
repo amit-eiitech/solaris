@@ -1,4 +1,5 @@
 # Solaris
+![Solaris - A business website starter kit for Laravel and Filament](docs/images/solaris.png)
 
 Solaris is a Laravel starter kit for the content-management backend of a business website. It gives you a Filament admin panel, data models, and database migrations for common business content so you can focus on building the public website around it.
 
