@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-            ContentSeeder::class,
-            FaqSeeder::class,
-            JobPostSeeder::class,
+            // ContentSeeder::class,
+            // FaqSeeder::class,
+            // JobPostSeeder::class,
         ]);
     }
 }

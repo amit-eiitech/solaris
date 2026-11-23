@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "747bfe3250981bf41e98099c869afa67",
+    "content-hash": "5581d21c9dbb1fe4a40f6af83bf7631e",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1137,6 +1137,66 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "eii/filament-language-switch",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amit-eiitech/filament-language-switch.git",
+                "reference": "d7929bf14ed96149c25c542efb2334d97c7f4981"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amit-eiitech/filament-language-switch/zipball/d7929bf14ed96149c25c542efb2334d97c7f4981",
+                "reference": "d7929bf14ed96149c25c542efb2334d97c7f4981",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "illuminate/support": "^13.0",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^11.0",
+                "phpunit/phpunit": "^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Eii\\FilamentLanguageSwitch\\LanguageSwitchServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Eii\\FilamentLanguageSwitch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A topbar locale switcher plugin for Filament panels with session + cookie persistence and RTL support.",
+            "keywords": [
+                "filament",
+                "filament-plugin",
+                "filament-v5",
+                "i18n",
+                "language-switcher",
+                "laravel",
+                "locale-switcher",
+                "localization",
+                "multilingual",
+                "rtl"
+            ],
+            "support": {
+                "issues": "https://github.com/amit-eiitech/filament-language-switch/issues",
+                "source": "https://github.com/amit-eiitech/filament-language-switch/tree/v1.0.2"
+            },
+            "time": "2026-11-20T12:55:25+00:00"
         },
         {
             "name": "filament/actions",

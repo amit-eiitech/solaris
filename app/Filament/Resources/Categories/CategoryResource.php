@@ -13,7 +13,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use UnitEnum;
 
 class CategoryResource extends Resource
 {
@@ -23,15 +22,27 @@ class CategoryResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Content';
-
-    protected static ?string $navigationLabel = 'Categories';
-
-    protected static ?string $modelLabel = 'Category';
-
-    protected static ?string $pluralModelLabel = 'Categories';
-
     protected static ?int $navigationSort = 5;
+
+    public static function getNavigationGroup(): ?string
+    {
+        return __('filament.navigation.groups.content');
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament.resources.categories.navigation_label');
+    }
+
+    public static function getModelLabel(): string
+    {
+        return __('filament.resources.categories.model_label');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament.resources.categories.plural_model_label');
+    }
 
     public static function form(Schema $schema): Schema
     {

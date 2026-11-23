@@ -3,8 +3,8 @@
 namespace App\Filament\Resources\Categories\Schemas;
 
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
@@ -14,12 +14,13 @@ class CategoryForm
     {
         return $schema
             ->components([
-                Section::make('Category Information')
-                    ->description('Categorization taxonomies shared across content types')
+                Section::make(__('filament.resources.categories.section_title'))
+                    ->description(__('filament.resources.categories.section_description'))
                     ->columns(2)
                     ->columnSpanFull()
                     ->schema([
                         TextInput::make('name')
+                            ->label(__('filament.fields.name'))
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true)
@@ -32,32 +33,35 @@ class CategoryForm
                                 }
                             })
                             ->columnSpanFull()
-                            ->helperText('Public category name, e.g. Corporate News, Product Launch, Company Events'),
+                            ->helperText(__('filament.fields.name_helper')),
 
                         TextInput::make('slug')
+                            ->label(__('filament.fields.slug'))
                             ->required()
                             ->maxLength(255)
                             // Always validate English, Japanese, and numbers. Block spaces/slashes.
                             ->regex('/^[\p{L}\p{N}\p{Nd}\-]+$/u')
                             ->validationAttribute('slug')
-                            ->helperText('URL slug for this category archive page. Only lowercase letters, numbers, and hyphens are allowed. No spaces or slashes.')
+                            ->helperText(__('filament.fields.slug_helper'))
                             ->unique(ignoreRecord: true),
 
                         Select::make('scope')
+                            ->label(__('filament.fields.scope'))
                             ->options([
-                                'news' => 'News',
-                                'events' => 'Events',
-                                'blog' => 'Blog',
+                                'news' => __('filament.scopes.news'),
+                                'events' => __('filament.scopes.events'),
+                                'blog' => __('filament.scopes.blog'),
                             ])
                             ->default('news')
                             ->required()
-                            ->helperText('The content module this taxonomy applies to'),
+                            ->helperText(__('filament.fields.scope_helper')),
 
                         Textarea::make('description')
+                            ->label(__('filament.fields.description'))
                             ->maxLength(65535)
                             ->rows(3)
                             ->columnSpanFull()
-                            ->helperText('Optional description displayed on the category archive page or in meta descriptions'),
+                            ->helperText(__('filament.fields.description_helper')),
                     ]),
             ]);
     }

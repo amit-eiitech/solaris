@@ -15,21 +15,26 @@ class CategoriesTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label(__('filament.fields.name'))
                     ->searchable(),
 
                 TextColumn::make('slug')
+                    ->label(__('filament.fields.slug'))
                     ->searchable(),
 
                 TextColumn::make('scope')
+                    ->label(__('filament.fields.scope'))
                     ->badge()
                     ->searchable(),
 
                 TextColumn::make('created_at')
+                    ->label(__('filament.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
+                    ->label(__('filament.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
