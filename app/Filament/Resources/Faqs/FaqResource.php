@@ -13,6 +13,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
+use Override;
 use UnitEnum;
 
 class FaqResource extends Resource
@@ -23,15 +25,31 @@ class FaqResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'question';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Content';
-
-    protected static ?string $navigationLabel = 'FAQs';
-
-    protected static ?string $modelLabel = 'FAQ';
-
-    protected static ?string $pluralModelLabel = 'FAQs';
-
     protected static ?int $navigationSort = 4;
+
+    #[Override]
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('filament.navigation.groups.content');
+    }
+
+    #[Override]
+    public static function getNavigationLabel(): string|Htmlable
+    {
+        return __('filament.resources.faqs.navigation_label');
+    }
+
+    #[Override]
+    public static function getModelLabel(): string
+    {
+        return __('filament.resources.faqs.model_label');
+    }
+
+    #[Override]
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament.resources.faqs.plural_model_label');
+    }
 
     public static function form(Schema $schema): Schema
     {

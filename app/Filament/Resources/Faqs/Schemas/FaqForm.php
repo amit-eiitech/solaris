@@ -4,7 +4,6 @@ namespace App\Filament\Resources\Faqs\Schemas;
 
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -15,41 +14,45 @@ class FaqForm
     {
         return $schema
             ->components([
-                Section::make('Question & Answer')
-                    ->description('The inquiry and its helpful resolution')
+                Section::make(__('filament.sections.faq_question_answer'))
+                    ->description(__('filament.sections.faq_question_answer_description'))
                     ->schema([
                         TextInput::make('question')
+                            ->label(__('filament.fields.question'))
                             ->required()
                             ->maxLength(255)
                             ->columnSpanFull()
-                            ->helperText('The common question asked by users or clients'),
+                            ->helperText(__('filament.helpers.faqs.question')),
 
                         RichEditor::make('answer')
+                            ->label(__('filament.fields.answer'))
                             ->required()
                             ->columnSpanFull()
-                            ->helperText('Clear, structured answer explaining the solution or procedure'),
+                            ->helperText(__('filament.helpers.faqs.answer')),
                     ]),
 
-                Section::make('Categorization & Ordering')
-                    ->description('Organize FAQ display and ordering on the website')
+                Section::make(__('filament.sections.faq_categorization'))
+                    ->description(__('filament.sections.faq_categorization_description'))
                     ->columns(2)
                     ->schema([
                         TextInput::make('category')
+                            ->label(__('filament.fields.category'))
                             ->maxLength(255)
                             ->columnSpanFull()
-                            ->helperText('Topic grouping (e.g. Account, Billing, Services, Technical)'),
+                            ->helperText(__('filament.helpers.faqs.category')),
 
                         TextInput::make('sort_order')
+                            ->label(__('filament.fields.sort_order'))
                             ->numeric()
                             ->default(0)
                             ->required()
-                            ->helperText('Display priority within its category; lower numbers appear first (e.g. 0, 10, 20)'),
+                            ->helperText(__('filament.helpers.faqs.sort_order')),
 
                         Toggle::make('is_published')
-                            ->label('Visible to Public')
+                            ->label(__('filament.fields.visible_to_public'))
                             ->default(true)
                             ->inline(false)
-                            ->helperText('When enabled, this FAQ is published and visible on the website'),
+                            ->helperText(__('filament.helpers.faqs.is_published')),
                     ]),
             ]);
     }

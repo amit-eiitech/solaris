@@ -17,12 +17,12 @@ enum EmploymentType: string implements HasColor, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::FullTime => 'Full-time',
-            self::PartTime => 'Part-time',
-            self::Contract => 'Contract',
-            self::Temporary => 'Temporary',
-            self::Internship => 'Internship',
-            self::Remote => 'Remote',
+            self::FullTime => __('filament.enums.employment_type.full_time'),
+            self::PartTime => __('filament.enums.employment_type.part_time'),
+            self::Contract => __('filament.enums.employment_type.contract'),
+            self::Temporary => __('filament.enums.employment_type.temporary'),
+            self::Internship => __('filament.enums.employment_type.internship'),
+            self::Remote => __('filament.enums.employment_type.remote'),
         };
     }
 

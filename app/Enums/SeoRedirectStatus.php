@@ -16,11 +16,11 @@ enum SeoRedirectStatus: int implements HasColor, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::MovedPermanently => '301 - Moved Permanently (Recommended for SEO & page migrations)',
-            self::Found => '302 - Found (Temporary redirect)',
-            self::TemporaryRedirect => '307 - Temporary Redirect (Preserves HTTP request method)',
-            self::PermanentRedirect => '308 - Permanent Redirect (Preserves HTTP request method)',
-            self::Gone => '410 - Gone (Resource permanently deleted and removed from index)',
+            self::MovedPermanently => __('filament.enums.seo_redirect_status.moved_permanently'),
+            self::Found => __('filament.enums.seo_redirect_status.found'),
+            self::TemporaryRedirect => __('filament.enums.seo_redirect_status.temporary_redirect'),
+            self::PermanentRedirect => __('filament.enums.seo_redirect_status.permanent_redirect'),
+            self::Gone => __('filament.enums.seo_redirect_status.gone'),
         };
     }
 
@@ -39,11 +39,11 @@ enum SeoRedirectStatus: int implements HasColor, HasLabel
     public function getShortLabel(): string
     {
         return match ($this) {
-            self::MovedPermanently => '301 - Moved Permanently',
-            self::Found => '302 - Found',
-            self::TemporaryRedirect => '307 - Temporary Redirect',
-            self::PermanentRedirect => '308 - Permanent Redirect',
-            self::Gone => '410 - Gone',
+            self::MovedPermanently => __('filament.enums.seo_redirect_status.moved_permanently_short'),
+            self::Found => __('filament.enums.seo_redirect_status.found_short'),
+            self::TemporaryRedirect => __('filament.enums.seo_redirect_status.temporary_redirect_short'),
+            self::PermanentRedirect => __('filament.enums.seo_redirect_status.permanent_redirect_short'),
+            self::Gone => __('filament.enums.seo_redirect_status.gone_short'),
         };
     }
 

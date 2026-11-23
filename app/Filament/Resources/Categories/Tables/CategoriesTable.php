@@ -43,7 +43,7 @@ class CategoriesTable
                 //
             ])
             ->recordActions([
-                EditAction::make(),
+                EditAction::make()->label(__('filament.actions.edit')),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

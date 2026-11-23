@@ -14,9 +14,9 @@ enum JobPostStatus: string implements HasColor, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::Draft => 'Draft',
-            self::Published => 'Published',
-            self::Closed => 'Closed',
+            self::Draft => __('filament.enums.job_post_status.draft'),
+            self::Published => __('filament.enums.job_post_status.published'),
+            self::Closed => __('filament.enums.job_post_status.closed'),
         };
     }
 

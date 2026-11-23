@@ -13,7 +13,7 @@ class ViewJobPost extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make(),
+            EditAction::make()->label(__('filament.actions.edit')),
         ];
     }
 }

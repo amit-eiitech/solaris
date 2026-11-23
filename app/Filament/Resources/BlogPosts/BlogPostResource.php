@@ -15,6 +15,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
+use Override;
 use UnitEnum;
 
 class BlogPostResource extends Resource
@@ -25,13 +27,37 @@ class BlogPostResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Content';
+    #[Override]
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('filament.navigation.groups.content');
+    }
 
-    protected static ?string $navigationLabel = 'Blog';
+    #[Override]
+    public static function getNavigationLabel(): string|Htmlable
+    {
+        return __('filament.resources.blog_posts.navigation_label');
+    }
 
-    protected static ?string $modelLabel = 'Blog Post';
+    #[Override]
+    public static function getModelLabel(): string
+    {
+        return __('filament.resources.blog_posts.model_label');
+    }
 
-    protected static ?string $pluralModelLabel = 'Blog Posts';
+    #[Override]
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament.resources.blog_posts.plural_model_label');
+    }
+
+    // protected static string | UnitEnum | null $navigationGroup = 'Content';
+
+    // protected static ?string $navigationLabel = 'Blog';
+
+    // protected static ?string $modelLabel = 'Blog Post';
+
+    // protected static ?string $pluralModelLabel = 'Blog Posts';
 
     protected static ?int $navigationSort = 3;
 

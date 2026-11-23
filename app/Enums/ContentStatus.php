@@ -14,9 +14,9 @@ enum ContentStatus: string implements HasColor, HasLabel
     public function getLabel(): string
     {
         return match ($this) {
-            self::Draft => 'Draft',
-            self::Published => 'Published',
-            self::Archived => 'Archived',
+            self::Draft => __('filament.enums.content_status.draft'),
+            self::Published => __('filament.enums.content_status.published'),
+            self::Archived => __('filament.enums.content_status.archived'),
         };
     }
 

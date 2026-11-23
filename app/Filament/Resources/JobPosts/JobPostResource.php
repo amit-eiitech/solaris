@@ -15,6 +15,8 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
+use Override;
 use UnitEnum;
 
 class JobPostResource extends Resource
@@ -25,15 +27,31 @@ class JobPostResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'title';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Recruitment';
-
-    protected static ?string $navigationLabel = 'Job Openings';
-
-    protected static ?string $modelLabel = 'Job Opening';
-
-    protected static ?string $pluralModelLabel = 'Job Openings';
-
     protected static ?int $navigationSort = 1;
+
+    #[Override]
+    public static function getNavigationGroup(): string|UnitEnum|null
+    {
+        return __('filament.navigation.groups.recruitment');
+    }
+
+    #[Override]
+    public static function getNavigationLabel(): string|Htmlable
+    {
+        return __('filament.resources.job_posts.navigation_label');
+    }
+
+    #[Override]
+    public static function getModelLabel(): string
+    {
+        return __('filament.resources.job_posts.model_label');
+    }
+
+    #[Override]
+    public static function getPluralModelLabel(): string
+    {
+        return __('filament.resources.job_posts.plural_model_label');
+    }
 
     public static function form(Schema $schema): Schema
     {

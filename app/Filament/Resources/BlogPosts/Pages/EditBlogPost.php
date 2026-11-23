@@ -14,8 +14,8 @@ class EditBlogPost extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make(),
-            DeleteAction::make(),
+            ViewAction::make()->label(__('filament.actions.view')),
+            DeleteAction::make()->label(__('filament.actions.delete')),
         ];
     }
 

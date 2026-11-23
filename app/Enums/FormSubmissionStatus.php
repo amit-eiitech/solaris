@@ -5,8 +5,7 @@ namespace App\Enums;
 use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasLabel;
 
-enum FormSubmissionStatus: string implements HasLabel, HasColor
-
+enum FormSubmissionStatus: string implements HasColor, HasLabel
 {
     case New = 'new';
     case Read = 'read';
@@ -16,10 +15,10 @@ enum FormSubmissionStatus: string implements HasLabel, HasColor
     public function getLabel(): string
     {
         return match ($this) {
-            self::New => 'New',
-            self::Read => 'Read',
-            self::Replied => 'Replied',
-            self::Archived => 'Archived',
+            self::New => __('filament.enums.form_submission_status.new'),
+            self::Read => __('filament.enums.form_submission_status.read'),
+            self::Replied => __('filament.enums.form_submission_status.replied'),
+            self::Archived => __('filament.enums.form_submission_status.archived'),
         };
     }
 

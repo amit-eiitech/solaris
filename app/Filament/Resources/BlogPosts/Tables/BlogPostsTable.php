@@ -16,33 +16,49 @@ class BlogPostsTable
     {
         return $table
             ->columns([
+                TextColumn::make('id')
+                    ->label(__('filament.fields.row_number')),
+
                 ImageColumn::make('featured_image')
+                    ->label(__('filament.fields.featured_image'))
                     ->square(),
 
                 TextColumn::make('title')
+                    ->label(__('filament.fields.title'))
                     ->searchable(),
 
+                TextColumn::make('categories.name')
+                    ->label(__('filament.fields.category'))
+                    ->badge()
+                    ->color('info'),
+
                 TextColumn::make('slug')
+                    ->label(__('filament.fields.slug'))
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('author_name')
+                    ->label(__('filament.fields.author_name'))
                     ->searchable(),
 
                 TextColumn::make('status')
+                    ->label(__('filament.fields.status'))
                     ->badge()
                     ->sortable(),
 
                 TextColumn::make('published_at')
+                    ->label(__('filament.fields.published_at'))
                     ->dateTime()
                     ->sortable(),
 
                 TextColumn::make('created_at')
+                    ->label(__('filament.fields.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 TextColumn::make('updated_at')
+                    ->label(__('filament.fields.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -52,8 +68,8 @@ class BlogPostsTable
                 //
             ])
             ->recordActions([
-                ViewAction::make(),
-                EditAction::make(),
+                ViewAction::make()->label(__('filament.actions.view')),
+                EditAction::make()->label(__('filament.actions.edit')),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
