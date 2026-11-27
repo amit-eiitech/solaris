@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\BlogPosts\Pages;
 
 use App\Filament\Resources\BlogPosts\BlogPostResource;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
@@ -14,8 +15,8 @@ class EditBlogPost extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            ViewAction::make()->label(__('filament.actions.view')),
-            DeleteAction::make()->label(__('filament.actions.delete')),
+            ViewAction::make()->label(__('filament.actions.view'))->icon(LucideIcon::Eye),
+            DeleteAction::make()->label(__('filament.actions.delete'))->icon(LucideIcon::Trash2),
         ];
     }
 

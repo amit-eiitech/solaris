@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\BlogPosts\Schemas;
 
 use App\Enums\ContentStatus;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -24,7 +25,7 @@ class BlogPostForm
                     ->tabs([
                         Tab::make(__('filament.tabs.details'))
                             ->columns(2)
-                            ->icon('heroicon-o-tag')
+                            ->icon(LucideIcon::Tag)
                             ->schema([
                                 TextInput::make('title')
                                     ->label(__('filament.fields.title'))
@@ -62,7 +63,7 @@ class BlogPostForm
                             ]),
 
                         Tab::make(__('filament.tabs.content'))
-                            ->icon('heroicon-o-pencil-square')
+                            ->icon(LucideIcon::PencilLine)
                             ->schema([
                                 FileUpload::make('featured_image')
                                     ->label(__('filament.fields.featured_image'))
@@ -78,7 +79,7 @@ class BlogPostForm
                             ]),
 
                         Tab::make(__('filament.tabs.publishing'))
-                            ->icon('heroicon-o-arrow-up-tray')
+                            ->icon(LucideIcon::Upload)
                             ->schema([
                                 Select::make('status')
                                     ->label(__('filament.fields.status'))

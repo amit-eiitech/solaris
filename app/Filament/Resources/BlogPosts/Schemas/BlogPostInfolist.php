@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\BlogPosts\Schemas;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
@@ -15,7 +16,7 @@ class BlogPostInfolist
         return $schema
             ->components([
                 Section::make(__('filament.sections.post_content'))
-                    ->icon('heroicon-o-document-text')
+                    ->icon(LucideIcon::FileText)
                     ->columns(3)
                     ->columnSpanFull()
                     ->schema([
@@ -53,7 +54,7 @@ class BlogPostInfolist
                     ]),
 
                 Section::make(__('filament.sections.publishing'))
-                    ->icon('heroicon-o-arrow-up-tray')
+                    ->icon(LucideIcon::Upload)
                     ->columns(2)
                     ->schema([
                         TextEntry::make('slug')
@@ -68,7 +69,7 @@ class BlogPostInfolist
                     ]),
 
                 Section::make(__('filament.sections.record_history'))
-                    ->icon('heroicon-o-clock')
+                    ->icon(LucideIcon::Clock)
                     ->columns(2)
                     ->schema([
                         TextEntry::make('created_at')

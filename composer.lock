@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5581d21c9dbb1fe4a40f6af83bf7631e",
+    "content-hash": "da72f6adcfc346ee1a787596f0f1e7af",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1197,6 +1197,49 @@
                 "source": "https://github.com/amit-eiitech/filament-language-switch/tree/v1.0.2"
             },
             "time": "2026-11-20T12:55:25+00:00"
+        },
+        {
+            "name": "eii/filament-lucide-icons",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amit-eiitech/filament-lucide-icons.git",
+                "reference": "122b5494fce9d81d9782895ef1f15f5422e902ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amit-eiitech/filament-lucide-icons/zipball/122b5494fce9d81d9782895ef1f15f5422e902ce",
+                "reference": "122b5494fce9d81d9782895ef1f15f5422e902ce",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0|^5.0",
+                "php": "^8.2",
+                "technikermathe/blade-lucide-icons": "^3.163"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eii\\FilamentLucideIcons\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Filament plugin for Lucide icons with global stroke width configuration.",
+            "keywords": [
+                "filament",
+                "filament-plugin",
+                "icons",
+                "laravel",
+                "lucide"
+            ],
+            "support": {
+                "issues": "https://github.com/amit-eiitech/filament-lucide-icons/issues",
+                "source": "https://github.com/amit-eiitech/filament-lucide-icons/tree/v1.0.0"
+            },
+            "time": "2026-11-26T05:19:10+00:00"
         },
         {
             "name": "filament/actions",
@@ -8199,6 +8242,71 @@
                 }
             ],
             "time": "2026-10-26T21:55:04+00:00"
+        },
+        {
+            "name": "technikermathe/blade-lucide-icons",
+            "version": "v3.213.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PascaleBeier/blade-lucide-icons.git",
+                "reference": "fa99410b3ad6cb60d0e28a9ff87fa52233bf3bec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PascaleBeier/blade-lucide-icons/zipball/fa99410b3ad6cb60d0e28a9ff87fa52233bf3bec",
+                "reference": "fa99410b3ad6cb60d0e28a9ff87fa52233bf3bec",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.6",
+                "illuminate/support": "^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.0|^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^9.0|^10.0|^11.0|^12.5.12",
+                "spatie/phpunit-snapshot-assertions": "^4.2.14|^5.0|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Technikermathe\\LucideIcons\\BladeLucideIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Technikermathe\\LucideIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dan Pock",
+                    "role": "Original Developer"
+                },
+                {
+                    "name": "Pascale Beier",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A package to easily make use of Lucide icons in your Laravel Blade views.",
+            "homepage": "https://github.com/technikermathe/blade-lucide-icons",
+            "keywords": [
+                "Heroicons",
+                "LucideIcons",
+                "blade",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/PascaleBeier/blade-lucide-icons/issues",
+                "source": "https://github.com/PascaleBeier/blade-lucide-icons/tree/v3.213.0"
+            },
+            "time": "2026-11-27T05:50:15+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

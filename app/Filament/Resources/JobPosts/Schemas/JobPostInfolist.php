@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\JobPosts\Schemas;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -15,7 +16,7 @@ class JobPostInfolist
         return $schema
             ->components([
                 Section::make(__('filament.sections.job_details'))
-                    ->icon('heroicon-o-briefcase')
+                    ->icon(LucideIcon::BriefcaseBusiness)
                     ->columns(3)
                     ->columnSpanFull()
                     ->schema([
@@ -75,7 +76,7 @@ class JobPostInfolist
                     ]),
 
                 Section::make(__('filament.sections.publishing'))
-                    ->icon('heroicon-o-arrow-up-tray')
+                    ->icon(LucideIcon::Upload)
                     ->columns(2)
                     ->schema([
                         TextEntry::make('slug')
@@ -89,7 +90,7 @@ class JobPostInfolist
                     ]),
 
                 Section::make(__('filament.sections.record_history'))
-                    ->icon('heroicon-o-clock')
+                    ->icon(LucideIcon::Clock)
                     ->columns(2)
                     ->schema([
                         TextEntry::make('created_at')

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\News\Tables;
 
 use App\Enums\ContentStatus;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -66,7 +67,7 @@ class NewsTable
                     ->options(ContentStatus::class),
             ])
             ->recordActions([
-                EditAction::make()->label(__('filament.actions.edit')),
+                EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

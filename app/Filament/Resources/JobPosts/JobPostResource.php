@@ -11,9 +11,9 @@ use App\Filament\Resources\JobPosts\Schemas\JobPostInfolist;
 use App\Filament\Resources\JobPosts\Tables\JobPostsTable;
 use App\Models\JobPost;
 use BackedEnum;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Override;
@@ -23,7 +23,7 @@ class JobPostResource extends Resource
 {
     protected static ?string $model = JobPost::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
+    protected static string|BackedEnum|null $navigationIcon = LucideIcon::BriefcaseBusiness;
 
     protected static ?string $recordTitleAttribute = 'title';
 

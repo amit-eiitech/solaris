@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\News\Schemas;
 
 use App\Enums\ContentStatus;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -23,7 +24,7 @@ class NewsForm
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make(__('filament.tabs.details'))
-                            ->icon('heroicon-o-tag')
+                            ->icon(LucideIcon::Tag)
                             ->schema([
                                 TextInput::make('title')
                                     ->label(__('filament.fields.title'))
@@ -55,7 +56,7 @@ class NewsForm
                             ]),
 
                         Tab::make(__('filament.tabs.content'))
-                            ->icon('heroicon-o-pencil-square')
+                            ->icon(LucideIcon::PencilLine)
                             ->schema([
                                 FileUpload::make('featured_image')
                                     ->label(__('filament.fields.featured_image'))
@@ -70,7 +71,7 @@ class NewsForm
                             ]),
 
                         Tab::make(__('filament.tabs.publishing'))
-                            ->icon('heroicon-o-arrow-up-tray')
+                            ->icon(LucideIcon::Upload)
                             ->schema([
                                 Select::make('status')
                                     ->label(__('filament.fields.status'))

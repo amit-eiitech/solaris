@@ -1,0 +1,3 @@
+<footer>
+    <!-- Start here -->
+</footer>

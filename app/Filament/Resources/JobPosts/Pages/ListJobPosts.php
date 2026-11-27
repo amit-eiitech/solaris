@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\JobPosts\Pages;
 
 use App\Filament\Resources\JobPosts\JobPostResource;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 
@@ -13,7 +14,7 @@ class ListJobPosts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make()->label(__('filament.actions.create')),
+            CreateAction::make()->label(__('filament.actions.create'))->icon(LucideIcon::CirclePlus),
         ];
     }
 }

@@ -11,9 +11,9 @@ use App\Filament\Resources\BlogPosts\Schemas\BlogPostInfolist;
 use App\Filament\Resources\BlogPosts\Tables\BlogPostsTable;
 use App\Models\BlogPost;
 use BackedEnum;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
-use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Contracts\Support\Htmlable;
 use Override;
@@ -23,7 +23,7 @@ class BlogPostResource extends Resource
 {
     protected static ?string $model = BlogPost::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
+    protected static string|BackedEnum|null $navigationIcon = LucideIcon::FileText;
 
     protected static ?string $recordTitleAttribute = 'title';
 

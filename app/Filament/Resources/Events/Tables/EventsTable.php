@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Events\Tables;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -83,7 +84,7 @@ class EventsTable
                 //
             ])
             ->recordActions([
-                EditAction::make()->label(__('filament.actions.edit')),
+                EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

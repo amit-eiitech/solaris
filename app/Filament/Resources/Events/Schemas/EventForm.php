@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Events\Schemas;
 
 use App\Enums\ContentStatus;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
@@ -23,7 +24,7 @@ class EventForm
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make(__('filament.tabs.details'))
-                            ->icon('heroicon-o-tag')
+                            ->icon(LucideIcon::Tag)
                             ->schema([
                                 TextInput::make('title')
                                     ->label(__('filament.fields.title'))
@@ -62,7 +63,7 @@ class EventForm
                             ]),
 
                         Tab::make(__('filament.tabs.schedule'))
-                            ->icon('heroicon-o-calendar-days')
+                            ->icon(LucideIcon::CalendarDays)
                             ->schema([
                                 DateTimePicker::make('starts_at')
                                     ->label(__('filament.fields.starts_at'))
@@ -85,7 +86,7 @@ class EventForm
                             ]),
 
                         Tab::make(__('filament.tabs.content'))
-                            ->icon('heroicon-o-pencil-square')
+                            ->icon(LucideIcon::PencilLine)
                             ->schema([
                                 FileUpload::make('featured_image')
                                     ->label(__('filament.fields.featured_image'))
@@ -99,7 +100,7 @@ class EventForm
                             ]),
 
                         Tab::make(__('filament.tabs.publishing'))
-                            ->icon('heroicon-o-arrow-up-tray')
+                            ->icon(LucideIcon::Upload)
                             ->schema([
                                 Select::make('status')
                                     ->label(__('filament.fields.status'))

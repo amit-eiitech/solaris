@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\JobPosts\Pages;
 
 use App\Filament\Resources\JobPosts\JobPostResource;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\EditAction;
 use Filament\Resources\Pages\ViewRecord;
 
@@ -13,7 +14,7 @@ class ViewJobPost extends ViewRecord
     protected function getHeaderActions(): array
     {
         return [
-            EditAction::make()->label(__('filament.actions.edit')),
+            EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
         ];
     }
 }

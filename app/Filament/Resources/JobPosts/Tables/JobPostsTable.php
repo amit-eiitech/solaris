@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\JobPosts\Tables;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -80,8 +81,8 @@ class JobPostsTable
                 //
             ])
             ->recordActions([
-                ViewAction::make()->label(__('filament.actions.view')),
-                EditAction::make()->label(__('filament.actions.edit')),
+                ViewAction::make()->label(__('filament.actions.view'))->icon(LucideIcon::Eye),
+                EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

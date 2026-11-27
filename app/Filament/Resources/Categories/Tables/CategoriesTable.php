@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Categories\Tables;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -43,7 +44,7 @@ class CategoriesTable
                 //
             ])
             ->recordActions([
-                EditAction::make()->label(__('filament.actions.edit')),
+                EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

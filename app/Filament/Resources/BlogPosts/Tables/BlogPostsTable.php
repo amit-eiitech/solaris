@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\BlogPosts\Tables;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -68,8 +69,8 @@ class BlogPostsTable
                 //
             ])
             ->recordActions([
-                ViewAction::make()->label(__('filament.actions.view')),
-                EditAction::make()->label(__('filament.actions.edit')),
+                ViewAction::make()->label(__('filament.actions.view'))->icon(LucideIcon::Eye),
+                EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

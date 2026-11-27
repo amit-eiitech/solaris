@@ -4,6 +4,7 @@ namespace App\Filament\Resources\JobPosts\Schemas;
 
 use App\Enums\EmploymentType;
 use App\Enums\JobPostStatus;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
@@ -23,7 +24,7 @@ class JobPostForm
                     ->columnSpanFull()
                     ->tabs([
                         Tab::make(__('filament.tabs.details'))
-                            ->icon('heroicon-o-tag')
+                            ->icon(LucideIcon::Tag)
                             ->columns(2)
                             ->schema([
                                 TextInput::make('title')
@@ -63,7 +64,7 @@ class JobPostForm
                             ]),
 
                         Tab::make(__('filament.sections.role'))
-                            ->icon('heroicon-o-briefcase')
+                            ->icon(LucideIcon::BriefcaseBusiness)
                             ->schema([
                                 RichEditor::make('description')
                                     ->label(__('filament.fields.description'))
@@ -78,7 +79,7 @@ class JobPostForm
                             ]),
 
                         Tab::make(__('filament.sections.application'))
-                            ->icon('heroicon-o-clipboard-document-list')
+                            ->icon(LucideIcon::ClipboardList)
                             ->schema([
                                 TextInput::make('application_url')
                                     ->label(__('filament.fields.application_url'))
@@ -94,7 +95,7 @@ class JobPostForm
                             ]),
 
                         Tab::make(__('filament.sections.publishing'))
-                            ->icon('heroicon-o-arrow-up-tray')
+                            ->icon(LucideIcon::Upload)
                             ->schema([
                                 Select::make('status')
                                     ->label(__('filament.fields.status'))

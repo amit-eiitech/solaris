@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Faqs\Tables;
 
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -55,7 +56,7 @@ class FaqsTable
                 //
             ])
             ->recordActions([
-                EditAction::make()->label(__('filament.actions.edit')),
+                EditAction::make()->label(__('filament.actions.edit'))->icon(LucideIcon::Pencil),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

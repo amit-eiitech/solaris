@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Faqs\Pages;
 
 use App\Filament\Resources\Faqs\FaqResource;
+use Eii\FilamentLucideIcons\Enums\LucideIcon;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
@@ -13,7 +14,7 @@ class EditFaq extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make()->label(__('filament.actions.delete')),
+            DeleteAction::make()->label(__('filament.actions.delete'))->icon(LucideIcon::Trash2),
         ];
     }
 
